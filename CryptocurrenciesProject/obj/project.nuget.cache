@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "4TUzjOgmSWtTcu3cxLA06egoW1cljA2uvoWb5+uncuDpw5bVmMwnNB9Y7qvs6FXfjdqSm8/7gLsScyRtM2xLjw==",
+  "dgSpecHash": "pbUWfzxGiHeiyhuoDuZw2nUPNOl5eK9fWnMmb7vPNceEa73XOVJPCjCquoAqMzfNDE9x2bHnlcszUHnfEYed4A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan\\CryptocurrenciesProject\\CryptocurrenciesProject\\CryptocurrenciesProject.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Bogdan\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
+    "C:\\Users\\Bogdan\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
+    "C:\\Users\\Bogdan\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

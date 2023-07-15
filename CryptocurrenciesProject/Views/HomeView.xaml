@@ -3,17 +3,130 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
              xmlns:local="clr-namespace:CryptocurrenciesProject.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </UserControl.Resources>
+    
     <Grid>
-        <StackPanel Grid.Row="0" Grid.Column="1">
-            <Button x:Name="btn1">
-                Тестова кнопка
-            </Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
 
-            
-        </StackPanel>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" >
+                <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#b0b9c6" IsHitTestVisible="False"
+                       Panel.ZIndex="1" Text="Пошук за назвою криптовалюти ..."
+                       Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"
+                       />
+
+
+                <TextBox x:Name="txtSearch" Style="{StaticResource textBoxSearch}" />
+
+                <fa:IconImage Icon="MagnifyingGlass" Width="15" Height="15" VerticalAlignment="Center"
+                          Margin="0 0 15 0" Foreground="#b0b9c6" HorizontalAlignment="Right"
+                          />
+            </Grid>
+
+
+            <Grid Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Button x:Name="addNewCustomer" Grid.Row="0" Style="{StaticResource addButton}"  >
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage  Icon="Filter" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0">
+                            <fa:IconImage.Foreground>
+                                <SolidColorBrush Color="White" />
+                            </fa:IconImage.Foreground>
+                        </fa:IconImage>
+                        <TextBlock Text="Фільтри"/>
+                    </StackPanel>
+                </Button>
+            </Grid>
+
+        </Grid>
+        
+        
+     
+        
+
+     
+        
+
+
+        <!--Members datagrid-->
+
+        <DataGrid x:Name="cryptocurrenciesDataGrid"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="3">
+
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Подробная информация" />
+                    <MenuItem Header="Редактировать" />
+                    <MenuItem Header="Удалить" />
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="№" IsReadOnly="True" CanUserResize="False" Width="auto " Binding="{Binding Number}" />
+
+
+                <DataGridTemplateColumn x:Name="surnameColumn" Header="Назва" IsReadOnly="True"  Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0" Background="{Binding BgColor}">
+                                    <TextBlock Text="{Binding Character}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>
+                                </Border>
+
+                                <TextBlock Text="{Binding Surname}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTextColumn x:Name="FirstName" Header="Ціна" IsReadOnly="True" Width="*" Binding="{Binding Name}">
+                </DataGridTextColumn>
+
+
+
+                <DataGridTextColumn Header="1 год %" IsReadOnly="True"  Width="*" Binding="{Binding Patronymic}"/>
+                <DataGridTextColumn Header="24 год %" IsReadOnly="True"  Width="*" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="7 дн %" IsReadOnly="True"  Width="*" Binding="{Binding Phone}" />
+
+                <DataGridTemplateColumn Header="За 24 год" IsReadOnly="True" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Name="gridEditBtn" Margin="0 0 5 0" Style="{StaticResource gridEditButton}" >
+                                    <fa:IconImage Icon="Pencil" Style="{StaticResource gridButtonIcon}" />
+                                </Button>
+
+                                <Button Name="gridRemoveBtn" Style="{StaticResource gridRemoveButton}" >
+                                    <fa:IconImage Icon="Remove" Style="{StaticResource gridButtonIcon}" />
+                                </Button>
+
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
 
 
 

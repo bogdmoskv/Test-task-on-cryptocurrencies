@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8DZb654ZyGmKfZbayaTs+tf3x97qnHhX6fZOmhxU46djGF959uHS4U14SnnWa/FiycoCJat4pEXYYH1hsGhejg==",
+  "dgSpecHash": "4TUzjOgmSWtTcu3cxLA06egoW1cljA2uvoWb5+uncuDpw5bVmMwnNB9Y7qvs6FXfjdqSm8/7gLsScyRtM2xLjw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan\\CryptocurrenciesProject\\CryptocurrenciesProject\\CryptocurrenciesProject.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Bogdan\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

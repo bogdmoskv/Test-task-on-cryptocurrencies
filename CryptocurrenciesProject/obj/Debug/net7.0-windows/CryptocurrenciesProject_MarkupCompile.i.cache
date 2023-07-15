@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan\CryptocurrenciesProject\CryptocurrenciesProject\App.xaml
-11407045341
+4725187528
 
-5177377882
-198-2048575587
-MainWindow.xaml;
+10-486330393
+208904584172
+Styles\ButtonStyles.xaml;Styles\UIColors.xaml;Views\HomeView.xaml;Views\MainView.xaml;
 
-False
+True
 

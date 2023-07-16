@@ -78,10 +78,12 @@
 
             <DataGrid.Columns>
 
-                <DataGridTextColumn Header="№" IsReadOnly="True" CanUserResize="False" Width="auto " Binding="{Binding Number}" />
+                <DataGridTextColumn Header="№" IsReadOnly="True" CanUserResize="False" Width="auto " Binding="{Binding Rank}" />
 
+                <DataGridTextColumn x:Name="Name" Header="Назва" IsReadOnly="True" Width="*" Binding="{Binding Name}">
+                </DataGridTextColumn>
 
-                <DataGridTemplateColumn x:Name="surnameColumn" Header="Назва" IsReadOnly="True"  Width="*">
+                <!--<DataGridTemplateColumn x:Name="surnameColumn" Header="Назва" IsReadOnly="True"  Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -93,15 +95,14 @@
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                </DataGridTemplateColumn>-->
 
-                <DataGridTextColumn x:Name="FirstName" Header="Ціна" IsReadOnly="True" Width="*" Binding="{Binding Name}">
+                <DataGridTextColumn x:Name="PriceUsd" Header="Ціна" IsReadOnly="True" Width="*" Binding="{Binding PriceUsd, StringFormat={}{0:N2}}">
                 </DataGridTextColumn>
 
 
-
-                <DataGridTextColumn Header="1 год %" IsReadOnly="True"  Width="*" Binding="{Binding Patronymic}"/>
-                <DataGridTextColumn Header="24 год %" IsReadOnly="True"  Width="*" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="1 год %" IsReadOnly="True"  Width="*" />
+                <DataGridTextColumn Header="24 год %" IsReadOnly="True"  Width="*" Binding="{Binding ChangePercent24Hr}" />
                 <DataGridTextColumn Header="7 дн %" IsReadOnly="True"  Width="*" Binding="{Binding Phone}" />
 
                 <DataGridTemplateColumn Header="За 24 год" IsReadOnly="True" Width="auto">

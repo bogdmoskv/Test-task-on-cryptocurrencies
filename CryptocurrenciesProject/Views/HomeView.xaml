@@ -65,7 +65,7 @@
 
         <!--Members datagrid-->
 
-        <DataGrid x:Name="cryptocurrenciesDataGrid"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="3">
+        <DataGrid x:Name="cryptocurrenciesDataGrid" ItemsSource="{Binding CryptoCurrencies}"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="3">
 
             <DataGrid.ContextMenu>
                 <ContextMenu>
@@ -105,7 +105,7 @@
                 <DataGridTextColumn Header="7 дн %" IsReadOnly="True"  Width="*" Binding="{Binding Phone}" />
 
                 <DataGridTemplateColumn Header="За 24 год" IsReadOnly="True" Width="auto">
-                    <DataGridTemplateColumn.CellTemplate>
+                    <!--<DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <Button Name="gridEditBtn" Margin="0 0 5 0" Style="{StaticResource gridEditButton}" >
@@ -118,7 +118,7 @@
 
                             </StackPanel>
                         </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn.CellTemplate>-->
                 </DataGridTemplateColumn>
 
 

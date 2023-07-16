@@ -24,8 +24,6 @@ namespace CryptocurrenciesProject.Views
         public HomeView()
         {
             InitializeComponent();
-            CryptoCurrencyModel cryptoCurrencyModel = new CryptoCurrencyModel();
-            cryptoCurrencyModel.GetCryptoCurrencies();
         }
     }
 }

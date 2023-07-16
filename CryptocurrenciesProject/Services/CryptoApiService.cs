@@ -22,55 +22,6 @@ namespace CryptocurrenciesProject.Services
             httpClient = new HttpClient();
         }
 
-        //public async Task<List<CryptoCurrency>> GetCryptoCurrencies()
-        //{
-        //    List<CryptoCurrency> cryptoCurrencies = new List<CryptoCurrency>();
-
-        //    try
-        //    {
-        //        string apiUrl = "https://api.coincap.io/v2/assets";
-        //        HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
-
-        //        if (response.IsSuccessStatusCode)
-        //        {
-
-        //            string responseBody = await response.Content.ReadAsStringAsync();
-
-
-        //            JObject json = JObject.Parse(responseBody);
-        //            JArray assets = (JArray)json["data"];
-
-        //            foreach (var item in assets)
-        //            {
-        //                CryptoCurrency cryptoCurrency = item.ToObject<CryptoCurrency>();
-        //                string imageUrl = $"https://assets.coincap.io/assets/icons/{cryptoCurrency.Symbol.ToLower()}@2x.png";
-        //                HttpClient httpClient = new HttpClient();
-        //                byte[] imageBytes = await httpClient.GetByteArrayAsync(imageUrl);
-        //                BitmapImage bitmapImage = new BitmapImage();
-        //                bitmapImage.BeginInit();
-        //                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-        //                bitmapImage.StreamSource = new MemoryStream(imageBytes);
-        //                bitmapImage.EndInit();
-        //                Image image = new Image();
-        //                image.Source = bitmapImage;
-        //                cryptoCurrency.Icon = image;
-        //                cryptoCurrencies.Add(cryptoCurrency);
-        //            }
-        //            //cryptoCurrencies = assets.ToObject<List<CryptoCurrency>>();
-        //        }
-        //        else
-        //        {
-
-        //        }
-        //    }
-        //    catch
-        //    {
-
-        //    }
-
-        //    return cryptoCurrencies;
-        //}
-
         public async Task<List<CryptoCurrency>> GetCryptoCurrencies()
         {
             List<CryptoCurrency> cryptoCurrencies = new List<CryptoCurrency>();

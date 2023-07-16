@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:CryptocurrenciesProject"
              StartupUri="Views/MainView.xaml"
-              xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
-             >
+              xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" xmlns:local1="clr-namespace:CryptocurrenciesProject.Converters">
     
     
     <Application.Resources>
@@ -14,6 +13,7 @@
                 <ResourceDictionary Source="/Styles/ButtonStyles.xaml"/>
                 <ResourceDictionary Source="/Styles/HomeViewStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+
 
 
             <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
@@ -232,5 +232,10 @@
                 </Style.Triggers>
             </Style>
         </ResourceDictionary>
+
+
+
+   
+
     </Application.Resources>
 </Application>

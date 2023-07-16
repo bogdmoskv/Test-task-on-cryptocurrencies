@@ -2,20 +2,74 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace CryptocurrenciesProject.Services
 {
     class CryptoApiService
     {
         private readonly HttpClient httpClient;
+
         public CryptoApiService()
         {
             httpClient = new HttpClient();
         }
+
+        //public async Task<List<CryptoCurrency>> GetCryptoCurrencies()
+        //{
+        //    List<CryptoCurrency> cryptoCurrencies = new List<CryptoCurrency>();
+
+        //    try
+        //    {
+        //        string apiUrl = "https://api.coincap.io/v2/assets";
+        //        HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
+
+        //        if (response.IsSuccessStatusCode)
+        //        {
+
+        //            string responseBody = await response.Content.ReadAsStringAsync();
+
+
+        //            JObject json = JObject.Parse(responseBody);
+        //            JArray assets = (JArray)json["data"];
+
+        //            foreach (var item in assets)
+        //            {
+        //                CryptoCurrency cryptoCurrency = item.ToObject<CryptoCurrency>();
+        //                string imageUrl = $"https://assets.coincap.io/assets/icons/{cryptoCurrency.Symbol.ToLower()}@2x.png";
+        //                HttpClient httpClient = new HttpClient();
+        //                byte[] imageBytes = await httpClient.GetByteArrayAsync(imageUrl);
+        //                BitmapImage bitmapImage = new BitmapImage();
+        //                bitmapImage.BeginInit();
+        //                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+        //                bitmapImage.StreamSource = new MemoryStream(imageBytes);
+        //                bitmapImage.EndInit();
+        //                Image image = new Image();
+        //                image.Source = bitmapImage;
+        //                cryptoCurrency.Icon = image;
+        //                cryptoCurrencies.Add(cryptoCurrency);
+        //            }
+        //            //cryptoCurrencies = assets.ToObject<List<CryptoCurrency>>();
+        //        }
+        //        else
+        //        {
+
+        //        }
+        //    }
+        //    catch
+        //    {
+
+        //    }
+
+        //    return cryptoCurrencies;
+        //}
 
         public async Task<List<CryptoCurrency>> GetCryptoCurrencies()
         {
@@ -28,26 +82,50 @@ namespace CryptocurrenciesProject.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-
                     string responseBody = await response.Content.ReadAsStringAsync();
-
-
                     JObject json = JObject.Parse(responseBody);
                     JArray assets = (JArray)json["data"];
-                    cryptoCurrencies = assets.ToObject<List<CryptoCurrency>>();
-                }
-                else
-                {
 
+                    foreach (var item in assets)
+                    {
+                        CryptoCurrency cryptoCurrency = item.ToObject<CryptoCurrency>();
+
+                        string symbol = cryptoCurrency.Symbol.ToLower();
+                        string imageUrl = $"https://assets.coincap.io/assets/icons/{symbol}@2x.png";
+                        try
+                        {
+                            BitmapImage bitmap = new BitmapImage();
+                            bitmap.BeginInit();
+                            bitmap.UriSource = new Uri(imageUrl);
+                            bitmap.EndInit();
+
+                            cryptoCurrency.Icon = bitmap;
+                        }
+                        catch (Exception ex)
+                        {
+                           
+                        }
+
+                        cryptoCurrencies.Add(cryptoCurrency);
+                    }
                 }
             }
             catch
             {
-
+           
             }
 
             return cryptoCurrencies;
         }
+
+
+
+
+
+
     }
+
+
+
 }
 

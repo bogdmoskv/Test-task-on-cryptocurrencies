@@ -80,8 +80,20 @@
 
                 <DataGridTextColumn Header="№" IsReadOnly="True" CanUserResize="False" Width="auto " Binding="{Binding Rank}" />
 
-                <DataGridTextColumn x:Name="Name" Header="Назва" IsReadOnly="True" Width="*" Binding="{Binding Name}">
-                </DataGridTextColumn>
+                <!--<DataGridTextColumn x:Name="Name" Header="Назва" IsReadOnly="True" Width="*" Binding="{Binding Name}">
+                </DataGridTextColumn>-->
+
+                <DataGridTemplateColumn  IsReadOnly="True" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Icon}" Width="25" Height="25" Margin="0 0 10 0" />
+                                <TextBlock Text="{Binding Name}" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
 
                 <!--<DataGridTemplateColumn x:Name="surnameColumn" Header="Назва" IsReadOnly="True"  Width="*">
                     <DataGridTemplateColumn.CellTemplate>

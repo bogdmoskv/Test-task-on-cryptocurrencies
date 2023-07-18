@@ -33,7 +33,9 @@
                        />
 
 
-                <TextBox x:Name="txtSearch" Style="{StaticResource textBoxSearch}" />
+                <TextBox x:Name="txtSearch" Style="{StaticResource textBoxSearch}" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}">
+                   
+                </TextBox>
 
                 <fa:IconImage Icon="MagnifyingGlass" Width="15" Height="15" VerticalAlignment="Center"
                           Margin="0 0 15 0" Foreground="#b0b9c6" HorizontalAlignment="Right"
@@ -55,9 +57,9 @@
 
 
             <Grid Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">
-                <Button x:Name="refreshButton" Grid.Row="0" Style="{StaticResource addButton}"  >
+                <Button x:Name="refreshButton" Grid.Row="0" Style="{StaticResource addButton}" Command="{Binding RefreshCommand}"  >
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage  Icon="Filter" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0">
+                        <fa:IconImage  Icon="Refresh" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0">
                             <fa:IconImage.Foreground>
                                 <SolidColorBrush Color="White" />
                             </fa:IconImage.Foreground>
@@ -82,8 +84,9 @@
 
         <!--Members datagrid-->
 
-        <DataGrid x:Name="cryptocurrenciesDataGrid" ItemsSource="{Binding CryptoCurrencies}"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="3">
+        <DataGrid x:Name="cryptocurrenciesDataGrid" ItemsSource="{Binding FilteredCryptoCurrencies}"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="3">
 
+           
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Подробная информация" />
@@ -97,10 +100,7 @@
 
                 <DataGridTextColumn Header="№" IsReadOnly="True" CanUserResize="False" Width="auto " Binding="{Binding Rank}" />
 
-                <!--<DataGridTextColumn x:Name="Name" Header="Назва" IsReadOnly="True" Width="*" Binding="{Binding Name}">
-                </DataGridTextColumn>-->
-
-                <DataGridTemplateColumn  IsReadOnly="True" Width="Auto">
+                <!--<DataGridTemplateColumn Header="Назва" IsReadOnly="True" Width="Auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -109,30 +109,27 @@
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+
+                <DataGridTemplateColumn IsReadOnly="True" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <!--<StackPanel Orientation="Horizontal">-->
+                                <Image Source="{Binding Icon}" Width="25" Height="25" Margin="0 0 10 0" />
+                            <!--</StackPanel>-->
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
 
-                <!--<DataGridTemplateColumn x:Name="surnameColumn" Header="Назва" IsReadOnly="True"  Width="*">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0" Background="{Binding BgColor}">
-                                    <TextBlock Text="{Binding Character}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>
-                                </Border>
-
-                                <TextBlock Text="{Binding Surname}" VerticalAlignment="Center"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>-->
+                <DataGridTextColumn x:Name="Name" Header="Назва" IsReadOnly="True" Width="*" Binding="{Binding Name}">
+                </DataGridTextColumn>
 
                 <DataGridTextColumn x:Name="PriceUsd" Header="Ціна" IsReadOnly="True" Width="*" Binding="{Binding PriceUsd, StringFormat={}{0:N2}}">
                 </DataGridTextColumn>
 
 
-                <DataGridTextColumn Header="1 год %" IsReadOnly="True"  Width="*" />
-                
-                <DataGridTextColumn Header="24 год %" IsReadOnly="True"  Width="*" Binding="{Binding ChangePercent24Hr}" />
+                <DataGridTextColumn Header="24 год %" IsReadOnly="True"  Width="*" Binding="{Binding ChangePercent24Hr, StringFormat={}{0:F2}}" />
                 <!--<DataGridTextColumn Header="24 год %" IsReadOnly="True" Width="*" Binding="{Binding ChangePercent24Hr}">
                     <DataGridTextColumn.CellStyle>
                         <Style TargetType="DataGridCell" BasedOn="{StaticResource ChangePercentCellStyle}" />
@@ -140,10 +137,10 @@
                 </DataGridTextColumn>-->
 
 
-                <DataGridTextColumn Header="7 дн %" IsReadOnly="True"  Width="*" Binding="{Binding Phone}" />
+                <DataGridTextColumn Header="Обіг " IsReadOnly="True"  Width="*" Binding="{Binding Supply, StringFormat={}{0:F2}}" />
 
-                <DataGridTemplateColumn Header="За 24 год" IsReadOnly="True" Width="auto">
-                    <!--<DataGridTemplateColumn.CellTemplate>
+                <!--<DataGridTemplateColumn Header="За 24 год" IsReadOnly="True" Width="auto">
+                    --><!--<DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <Button Name="gridEditBtn" Margin="0 0 5 0" Style="{StaticResource gridEditButton}" >
@@ -156,8 +153,8 @@
 
                             </StackPanel>
                         </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>-->
-                </DataGridTemplateColumn>
+                    </DataGridTemplateColumn.CellTemplate>--><!--
+                </DataGridTemplateColumn>-->
 
 
             </DataGrid.Columns>

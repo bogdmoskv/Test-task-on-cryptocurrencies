@@ -9,28 +9,41 @@ using System.Windows.Media;
 
 namespace CryptocurrenciesProject.Converters
 {
-    public class ChangePercentColorConverter : IMultiValueConverter
+    public class PositiveToBrushConverter : IValueConverter
     {
-        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values != null && values.Length == 2 && values[0] is decimal changePercent && values[1] is SolidColorBrush defaultBrush)
+            if (value is double percent && percent > 0)
             {
-                if (changePercent < 0)
-                {
-                    return Brushes.Red;
-                }
-                else
-                {
-                    return Brushes.Green;
-                }
+                return new SolidColorBrush(Colors.Green);
             }
 
-            return Brushes.Black; // Используем переданный кисть по умолчанию
+            return Binding.DoNothing;
         }
 
-        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
     }
+
+    public class NegativeToBrushConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is double percent && percent < 0)
+            {
+                return new SolidColorBrush(Colors.Red);
+            }
+
+            return Binding.DoNothing;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+
 }

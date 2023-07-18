@@ -174,6 +174,12 @@
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
+
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Cursor" Value="Hand" />
+                    </Trigger>
+                </Style.Triggers>
             </Style>
             <!--<SolidColorBrush x:Key="{x:Static DataGrid.FocusBorderBrushKey}" Color="#FF000000"/>-->
             <Style x:Key="DataGridRowStyle1" TargetType="{x:Type DataGridRow}">

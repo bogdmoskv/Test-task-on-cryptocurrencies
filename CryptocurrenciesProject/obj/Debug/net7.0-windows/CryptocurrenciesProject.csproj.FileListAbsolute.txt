@@ -29,3 +29,8 @@ C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan\Cryptocu
 C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan\CryptocurrenciesProject\CryptocurrenciesProject\obj\Debug\net7.0-windows\App.baml
 C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan\CryptocurrenciesProject\CryptocurrenciesProject\obj\Debug\net7.0-windows\Styles\HomeViewStyles.baml
 C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan\CryptocurrenciesProject\CryptocurrenciesProject\bin\Debug\net7.0-windows\Newtonsoft.Json.dll
+C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan\CryptocurrenciesProject\CryptocurrenciesProject\bin\Debug\net7.0-windows\Microsoft.Expression.Interactions.dll
+C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan\CryptocurrenciesProject\CryptocurrenciesProject\bin\Debug\net7.0-windows\System.Windows.Interactivity.dll
+C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan\CryptocurrenciesProject\CryptocurrenciesProject\obj\Debug\net7.0-windows\Styles\CryptoCurrencyViewStyles.baml
+C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan\CryptocurrenciesProject\CryptocurrenciesProject\obj\Debug\net7.0-windows\Views\CryptoCurrencyView.g.cs
+C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan\CryptocurrenciesProject\CryptocurrenciesProject\obj\Debug\net7.0-windows\Views\CryptoCurrencyView.baml

@@ -1,6 +1,7 @@
 ﻿using CryptocurrenciesProject.Commands;
 using CryptocurrenciesProject.Models;
 using CryptocurrenciesProject.Services;
+using CryptocurrenciesProject.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace CryptocurrenciesProject.ViewModels
 {
@@ -44,6 +46,43 @@ namespace CryptocurrenciesProject.ViewModels
 
         public ICommand RefreshCommand { get; }
         public ICommand TextChangedCommand { get; }
+        private ICommand showInformationCommand;
+        public ICommand ShowInformationCommand
+        {
+            get
+            {
+                if (showInformationCommand == null)
+                    showInformationCommand = new RelayCommand(ShowInformation);
+                return showInformationCommand;
+            }
+        }
+
+        private void ShowInformation(object parameter)
+        {
+            if (parameter is CryptoCurrency selectedCrypto)
+            {
+                // Используйте выбранную криптовалюту для получения информации или выполнения необходимых операций
+                // Пример:
+                MessageBox.Show($"Selected cryptocurrency: {selectedCrypto.Name}, Symbol: {selectedCrypto.Symbol}");
+
+                CryptoCurrencyView cryptoCurrencyView = new CryptoCurrencyView();
+                cryptoCurrencyView.ShowDialog();
+            }
+        }
+
+        private CryptoCurrency selectedCryptoCurrency;
+        public CryptoCurrency SelectedCryptoCurrency
+        {
+            get { return selectedCryptoCurrency; }
+            set
+            {
+                selectedCryptoCurrency = value;
+                OnPropertyChanged(nameof(SelectedCryptoCurrency));
+            }
+        }
+
+
+
 
         public ObservableCollection<CryptoCurrency> CryptoCurrencies
         {

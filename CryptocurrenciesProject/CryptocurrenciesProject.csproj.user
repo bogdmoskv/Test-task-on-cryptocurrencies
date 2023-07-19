@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\CryptoCurrencyView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\HomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -15,10 +18,16 @@
     <Page Update="Styles\ButtonStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Styles\CryptoCurrencyViewStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Styles\HomeViewStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\UIColors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CryptoCurrencyView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\HomeView.xaml">

@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptocurrenciesProject.Views"
         mc:Ignorable="d"
-        Title="" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="" Height="630" Width="950" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        >
 
     <Window.Resources>
         <ResourceDictionary>
@@ -17,9 +19,172 @@
     
     <Grid Style="{StaticResource WindowStyle}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="517*"/>
-            <ColumnDefinition Width="283*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
+
+        <!-- Левая колонка -->
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Назва криптовалюти:" FontSize="18" FontWeight="Bold" Margin="10" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="1" Text="{Binding Name}" Grid.Row="0"  FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+
+                </Grid>
+
+
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Символ:" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding Symbol}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Ранг:" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding Rank}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                </Grid>
+
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Ціна (USD):" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding PriceUsd, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                </Grid>
+
+
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Поточна кількість одиниць&#x0a;криптовалюти в обігу:" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding Supply}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                </Grid>
+
+
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Максимальна кількість одиниць &#x0a;криптовалюти, яка може &#x0a;існувати в обігу" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding MaxSupply}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+
+                </Grid>
+
+
+
+                <Grid Grid.Row="6">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Ринкова капіталізація (USD):" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding MarketCapUsd, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                </Grid>
+
+
+
+                <Grid Grid.Row="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Об'єм торгів криптовалютою &#x0a;за 24 год (USD):" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding VolumeUsd24Hr, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+
+                </Grid>
+
+
+
+                <Grid Grid.Row="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Відсоток зміни ціни&#x0a;криптовалюти за останні 24 год:" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding ChangePercent24Hr, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+
+                </Grid>
+
+
+                <Grid Grid.Row="9">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Середньозважена ціна&#x0a;криптовалюти за останні 24 год:" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
+                    <TextBox Text="{Binding Vwap24Hr, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+
+                </Grid>
+
+
+
+
+
+            </Grid>
+        </Grid>
+
+        <!-- Правая колонка -->
+        <Grid Grid.Column="1">
+            <DataGrid ItemsSource="{Binding Markets}" AutoGenerateColumns="False" Margin="10" VerticalAlignment="Center">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Рынок" Binding="{Binding MarketName}"/>
+                    <DataGridTextColumn Header="Базовая валюта" Binding="{Binding BaseCurrency}"/>
+                    <DataGridTextColumn Header="Котируемая валюта" Binding="{Binding QuoteCurrency}"/>
+                    <DataGridTextColumn Header="Объем торгов" Binding="{Binding Volume}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
 
     </Grid>
 

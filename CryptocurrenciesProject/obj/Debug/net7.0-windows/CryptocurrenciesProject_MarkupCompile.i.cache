@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия\CryptocurrenciesProject\CryptocurrenciesProject\App.xaml
-5-1879804893
+71424752401
 
-14-290574613
-209-575687719
-Styles\ButtonStyles.xaml;Styles\HomeViewStyles.xaml;Styles\UIColors.xaml;Views\HomeView.xaml;Views\MainView.xaml;
+16-1833419797
+2111483253905
+Styles\ButtonStyles.xaml;Styles\CryptoCurrencyViewStyles.xaml;Styles\HomeViewStyles.xaml;Styles\UIColors.xaml;Views\CryptoCurrencyView.xaml;Views\HomeView.xaml;Views\MainView.xaml;
 
 False
 

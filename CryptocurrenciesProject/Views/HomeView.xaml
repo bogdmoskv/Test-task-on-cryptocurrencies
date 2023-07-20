@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
               xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             
              xmlns:local="clr-namespace:CryptocurrenciesProject.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -84,9 +86,22 @@
 
         <!--Members datagrid-->
 
-        <DataGrid x:Name="cryptocurrenciesDataGrid" ItemsSource="{Binding FilteredCryptoCurrencies}"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="3">
+        <DataGrid x:Name="cryptocurrenciesDataGrid" ItemsSource="{Binding FilteredCryptoCurrencies}"  Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="3" SelectedItem="{Binding SelectedCryptoCurrency}">
+            <!--<i:Interaction.Triggers>
+                <i:EventTrigger EventName="PreviewMouseLeftButtonDown">
+                    <i:InvokeCommandAction Command="{Binding ShowInformationCommand}" CommandParameter="{Binding SelectedItem, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>-->
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectedCellsChanged">
+                    <i:InvokeCommandAction Command="{Binding ShowInformationCommand}" CommandParameter="{Binding SelectedItem, ElementName=cryptocurrenciesDataGrid}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
 
-           
+
+
+
+
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Подробная информация" />

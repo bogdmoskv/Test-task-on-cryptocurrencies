@@ -216,6 +216,7 @@
                     </Setter.Value>
                 </Setter>
 
+             
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
                         <Setter Property="Background" Value="#623ed0"/>
@@ -234,8 +235,12 @@
                         </MultiTrigger.Conditions>
                         <Setter Property="Background" Value="#dfdfdf"/>
                     </MultiTrigger>
+                    
+                    
 
                 </Style.Triggers>
+                
+                
             </Style>
         </ResourceDictionary>
 

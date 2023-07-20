@@ -1,11 +1,29 @@
 {
   "version": 2,
-  "dgSpecHash": "/lqYY/xMv84pd0dDum1iyywrh5xQkU+e/TkOA7ZolmthbB2KIc7x+kDLjRMm+eI70uJPig3Y5tDb/yZC0HdgRg==",
+  "dgSpecHash": "owxE6Dp7g/bnbrapjbumYfzrxnVz/Yi+CMWJ4UAhbiAK5QTiNdCAvcXJXDJNCgkvAvD1RYzaolgei/t9vX2q8w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия\\CryptocurrenciesProject\\CryptocurrenciesProject\\CryptocurrenciesProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bogdan\\.nuget\\packages\\fontawesome.sharp\\6.3.0\\fontawesome.sharp.6.3.0.nupkg.sha512",
-    "C:\\Users\\Bogdan\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\Bogdan\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Bogdan\\.nuget\\packages\\system.windows.interactivity.wpf\\2.0.20525\\system.windows.interactivity.wpf.2.0.20525.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия\\CryptocurrenciesProject\\CryptocurrenciesProject\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Windows.Interactivity.WPF 2.0.20525' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "System.Windows.Interactivity.WPF",
+      "targetGraphs": [
+        "net7.0-windows7.0"
+      ]
+    }
+  ]
 }

@@ -1,0 +1,182 @@
+﻿<UserControl x:Class="CryptocurrenciesProject.Views.ConvertView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CryptocurrenciesProject.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Style TargetType="Border" x:Key="PageStyle">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="pack://application:,,,/Images/cryptoCurrencyBackground.jpg" Opacity="0.4" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Border" x:Key="ConvertBorderStyle">
+            <!--<Setter Property="Background" Value="White" />-->
+            <Setter Property="BorderThickness" Value="0.5" />
+            <Setter Property="BorderBrush" Value="Violet" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+
+        <Style TargetType="Label" x:Key="LabelStyle">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="0, 16, 0, 4" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+
+        <Style TargetType="ComboBox" x:Key="ComboBoxFlatStyle">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Height" Value="48" />
+            <Setter Property="Margin" Value="10, 0" />
+        </Style>
+
+        <Style TargetType="TextBox" x:Key="TextBoxStyle">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Height" Value="52" />
+            <Setter Property="Margin" Value="10, 0" />
+            <Setter Property="Padding" Value="10, 0" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+    
+    </UserControl.Resources>
+
+    <Border Style="{DynamicResource ConvertBorderStyle}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Content="Оберіть монети, які Ви хочете конвертувати"
+                           Style="{DynamicResource LabelStyle}"
+                           FontSize="24"
+                           FontWeight="Bold"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="З криптовалюти"
+                               Style="{DynamicResource LabelStyle}"
+                               FontSize="20"
+                               Margin="16, 16, 0, 4"
+                               HorizontalAlignment="Center"
+                                />
+
+            <ComboBox ItemsSource="{Binding ConvertModels}"
+                                  SelectedItem="{Binding SelectedFromCoin}"
+                                  Style="{DynamicResource ComboBoxFlatStyle}"
+                                  IsTextSearchEnabled="True"
+                                  FontSize="20"
+                                  Height="48"
+                                  Margin="10, 0"
+                                  Grid.Column="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Grid>
+
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="В криптовалюту"
+                               Style="{DynamicResource LabelStyle}"
+                               FontSize="20"
+                               Margin="16, 16, 0, 4"
+                               HorizontalAlignment="Center"
+                                />
+
+            <ComboBox ItemsSource="{Binding ConvertModels}"
+                                  SelectedItem="{Binding SelectedFromCoin}"
+                                  Style="{DynamicResource ComboBoxFlatStyle}"
+                                  IsTextSearchEnabled="True"
+                                  FontSize="20"
+                                  Height="48"
+                                  Margin="10, 0"
+                                  Grid.Column="1">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Grid>
+
+
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Сума"
+                           Style="{DynamicResource LabelStyle}"
+                           FontSize="20"
+                           Margin="16, 16, 0, 4"
+                           HorizontalAlignment="Center"
+                   />
+
+            <TextBox Style="{DynamicResource TextBoxStyle}"
+                             Text="{Binding Count}"
+                             HorizontalContentAlignment="Left"
+                             Padding="10, 0"
+                             VerticalContentAlignment="Center"
+                             FontSize="20"
+                             Margin="10, 0"
+                             Grid.Column="1"
+                             Height="52"/>
+
+        </Grid>
+
+
+
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Результат"
+                           Style="{DynamicResource LabelStyle}"
+                           FontSize="20"
+                           Margin="16, 16, 0, 4"
+                           HorizontalAlignment="Center"
+                   />
+
+            <TextBox Style="{DynamicResource TextBoxStyle}"
+                             Text="{Binding Count}"
+                             HorizontalContentAlignment="Left"
+                             Padding="10, 0"
+                             VerticalContentAlignment="Center"
+                             FontSize="20"
+                             Margin="10, 0"
+                             Grid.Column="1"
+                             Height="52"/>
+
+        </Grid>
+
+    </Grid>
+    </Border>
+    
+</UserControl>

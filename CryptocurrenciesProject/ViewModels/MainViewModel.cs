@@ -49,12 +49,18 @@ namespace CryptocurrenciesProject.ViewModels
             get;
         }
 
+        public ICommand ShowConvertViewCommand
+        {
+            get;
+        }
+
         public MainViewModel()
         {
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
 
             //Default view
             ExecuteShowHomeViewCommand(null);
+            ShowConvertViewCommand = new ViewModelCommand(ExecuteShowConvertViewCommand);
         }
 
 
@@ -63,6 +69,13 @@ namespace CryptocurrenciesProject.ViewModels
             CurrentChildView = new HomeViewModel();
             Caption = "Головна сторінка";
             Icon = IconChar.Home;
+        }
+
+        private void ExecuteShowConvertViewCommand(object obj)
+        {
+            CurrentChildView = new ConvertViewModel();
+            Caption = "Конвертація";
+            Icon = IconChar.Coins;
         }
     }
 }

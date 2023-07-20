@@ -70,3 +70,5 @@ C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan — ко
 C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия\CryptocurrenciesProject\CryptocurrenciesProject\obj\Debug\net7.0-windows\CryptocurrenciesProject.pdb
 C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия\CryptocurrenciesProject\CryptocurrenciesProject\obj\Debug\net7.0-windows\CryptocurrenciesProject.genruntimeconfig.cache
 C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия\CryptocurrenciesProject\CryptocurrenciesProject\obj\Debug\net7.0-windows\ref\CryptocurrenciesProject.dll
+C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия\CryptocurrenciesProject\CryptocurrenciesProject\obj\Debug\net7.0-windows\Views\ConvertView.g.cs
+C:\Users\Bogdan\Desktop\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия\CryptocurrenciesProject\CryptocurrenciesProject\obj\Debug\net7.0-windows\Views\ConvertView.baml

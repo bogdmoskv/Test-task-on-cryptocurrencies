@@ -22,6 +22,10 @@
         <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
             <local1:HomeView/>
         </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:ConvertViewModel}">
+            <local1:ConvertView/>
+        </DataTemplate>
     </Window.Resources>
 
 
@@ -80,6 +84,17 @@
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Головна сторінка" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+
+                    <RadioButton Style="{StaticResource menuButton}"
+                                 Tag="{StaticResource color6}"
+                                 Command="{Binding ShowConvertViewCommand}"
+                                 >
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Coins" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Конвертація" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 

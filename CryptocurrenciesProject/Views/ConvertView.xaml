@@ -82,6 +82,7 @@
 
                 <!--SelectedItem="{Binding SelectedFromCoin}"-->
                 <ComboBox ItemsSource="{Binding CryptoCurrencies}"
+                          SelectedItem="{Binding SelectedFromCoin}"
                                  TextSearch.TextPath="Name"
                                   Style="{DynamicResource ComboBoxFlatStyle}"
                                   IsTextSearchEnabled="True"
@@ -113,6 +114,7 @@
                                 />
 
                 <ComboBox ItemsSource="{Binding CryptoCurrencies}"
+                          SelectedItem="{Binding SelectedToCoin}"
                                  TextSearch.TextPath="Name"
                                   Style="{DynamicResource ComboBoxFlatStyle}"
                                   IsTextSearchEnabled="True"
@@ -145,7 +147,7 @@
                    />
 
             <TextBox Style="{DynamicResource TextBoxStyle}"
-                             Text="{Binding Count}"
+                             Text="{Binding Count, UpdateSourceTrigger=PropertyChanged}"
                              HorizontalContentAlignment="Left"
                              Padding="10, 0"
                              VerticalContentAlignment="Center"
@@ -172,7 +174,7 @@
                    />
 
             <TextBox Style="{DynamicResource TextBoxStyle}"
-                             Text="{Binding Count}"
+                             Text="{Binding Result}"
                              HorizontalContentAlignment="Left"
                              Padding="10, 0"
                              VerticalContentAlignment="Center"

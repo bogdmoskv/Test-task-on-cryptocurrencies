@@ -46,7 +46,7 @@
 
 
             <Grid Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">
-                <Button x:Name="refreshButton" Grid.Row="0" Style="{StaticResource addButton}" Command="{Binding RefreshCommand}"  >
+                <Button  Grid.Row="0" Style="{StaticResource addButton}" Command="{Binding RefreshCommand}"  >
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage  Icon="Refresh" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0">
                             <fa:IconImage.Foreground>

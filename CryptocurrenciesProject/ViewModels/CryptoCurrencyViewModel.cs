@@ -1,10 +1,13 @@
-﻿using CryptocurrenciesProject.Models;
+﻿using CryptocurrenciesProject.Commands;
+using CryptocurrenciesProject.Models;
 using CryptocurrenciesProject.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace CryptocurrenciesProject.ViewModels
 {
@@ -12,6 +15,12 @@ namespace CryptocurrenciesProject.ViewModels
     {
         private string selectedCryptoId;
         private CryptoCurrency selectedCrypto;
+        public ICommand RefreshCommand { get; }
+
+        public CryptoCurrencyViewModel()
+        {
+            RefreshCommand = new RelayCommand(Refresh);
+        }
 
         public string SelectedCryptoId
         {
@@ -34,6 +43,15 @@ namespace CryptocurrenciesProject.ViewModels
                 selectedCrypto = value;
                 OnPropertyChanged(nameof(SelectedCrypto));
             }
+        }
+
+        
+
+        public async void Refresh(object parameter)
+        {
+            CryptoApiService cryptoApiService = new CryptoApiService();
+            SelectedCrypto = await cryptoApiService.GetCryptoCurrencyById(SelectedCrypto.Id);
+            MessageBox.Show("Інформацію було оновлено!");
         }
     }
 

@@ -9,6 +9,8 @@
 
   <ItemGroup>
     <None Remove="Images\cryptoCurrencyBackground.jpg" />
+    <None Remove="Views\AxialisIconWorkshopClassic_11714.png" />
+    <None Remove="Views\btc-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95386.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +23,8 @@
     <Resource Include="Images\cryptoCurrencyBackground.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Views\AxialisIconWorkshopClassic_11714.png" />
+    <Resource Include="Views\btc-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95386.png" />
   </ItemGroup>
 
 </Project>

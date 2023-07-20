@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CryptocurrenciesProject.Views" 
         xmlns:local1="clr-namespace:CryptocurrenciesProject.ViewModels"
+         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         mc:Ignorable="d"
-        Title="" Height="630" Width="950" WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
-      
+        Height="700" Width="640" WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" Icon="/Views/AxialisIconWorkshopClassic_11714.png"
+        
+        
         >
 
     <Window.Resources>
@@ -21,8 +23,8 @@
     
     <Grid Style="{StaticResource WindowStyle}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
+            <!--<ColumnDefinition Width="1*"/>-->
         </Grid.ColumnDefinitions>
 
         <!-- Левая колонка -->
@@ -40,6 +42,7 @@
             </Grid.RowDefinitions>
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -169,6 +172,17 @@
 
                 </Grid>
 
+                
+                <Button Margin="0,15,0,15"  Grid.Row="10" Style="{StaticResource addButton}" Command="{Binding RefreshCommand}"  >
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage  Icon="Refresh" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0">
+                            <fa:IconImage.Foreground>
+                                <SolidColorBrush Color="White" />
+                            </fa:IconImage.Foreground>
+                        </fa:IconImage>
+                        <TextBlock Text="Оновити інформацію"/>
+                    </StackPanel>
+                </Button>
 
 
 
@@ -177,7 +191,7 @@
         </Grid>
 
         <!-- Правая колонка -->
-        <Grid Grid.Column="1">
+        <!--<Grid Grid.Column="1">
             <DataGrid ItemsSource="{Binding Markets}" AutoGenerateColumns="False" Margin="10" VerticalAlignment="Center">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Рынок" Binding="{Binding MarketName}"/>
@@ -186,7 +200,7 @@
                     <DataGridTextColumn Header="Объем торгов" Binding="{Binding Volume}"/>
                 </DataGrid.Columns>
             </DataGrid>
-        </Grid>
+        </Grid>-->
 
     </Grid>
 

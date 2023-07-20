@@ -8,9 +8,10 @@
         xmlns:viewModel="clr-namespace:CryptocurrenciesProject.ViewModels" 
         xmlns:local1="clr-namespace:CryptocurrenciesProject.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="1300"
+        Title="CryptoTask by B.Moskvichev" Height="700" Width="1300"
         WindowStartupLocation="CenterScreen" 
-        Background="LightGray"
+        Background="LightGray" 
+        Icon="/Views/btc-crypto-cryptocurrency-cryptocurrencies-cash-money-bank-payment_95386.png"
         >
 
     <Window.DataContext>

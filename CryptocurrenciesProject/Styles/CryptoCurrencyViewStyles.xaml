@@ -4,11 +4,10 @@
     <Style x:Key="WindowStyle" TargetType="Grid">
         <Setter Property="Background">
             <Setter.Value>
-                <ImageBrush ImageSource="pack://application:,,,/Images/cryptoCurrencyBackground.jpg"  />
+                <ImageBrush ImageSource="pack://application:,,,/Images/cryptoCurrencyBackground.jpg" Opacity="0.4"  />
             </Setter.Value>
         </Setter>
 
-        <Setter Property="Opacity" Value="0.40" />
     </Style>
     
 </ResourceDictionary>

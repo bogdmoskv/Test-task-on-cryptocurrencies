@@ -45,8 +45,6 @@
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Width" Value="250"/>
         <Setter Property="Height" Value="35"/>
-        <!--<Setter Property="HorizontalAlignment" Value="Right"/>-->
-        <!--<Setter Property="Margin" Value="0 20 0 0"/>-->
         <Setter Property="FontSize" Value="13"/>
         <Setter Property="Grid.Row" Value="1"/>
         <Setter Property="Template">
@@ -132,7 +130,6 @@
 
     <Style x:Key="gridEditButton" TargetType="Button">
         <Setter Property="Background" Value="#ffffff"/>
-        <!--<Setter Property="Background" Value="#512da8"/>-->
         <Setter Property="BorderBrush" Value="#4a148c"/>
         <Setter Property="Foreground" Value="#ffffff"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
@@ -157,7 +154,6 @@
 
     <Style x:Key="gridRemoveButton" TargetType="Button" BasedOn="{StaticResource gridEditButton}">
         <Setter Property="Background" Value="#ffffff"/>
-        <!--<Setter Property="Background" Value="#d32f2f"/>-->
         <Setter Property="BorderBrush" Value="#b71c1c"/>
 
         <Style.Triggers>

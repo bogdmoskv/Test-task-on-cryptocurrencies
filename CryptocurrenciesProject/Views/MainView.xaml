@@ -4,7 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-        xmlns:local="clr-namespace:CryptocurrenciesProject" xmlns:viewModel="clr-namespace:CryptocurrenciesProject.ViewModels" xmlns:local1="clr-namespace:CryptocurrenciesProject.Views"
+        xmlns:local="clr-namespace:CryptocurrenciesProject" 
+        xmlns:viewModel="clr-namespace:CryptocurrenciesProject.ViewModels" 
+        xmlns:local1="clr-namespace:CryptocurrenciesProject.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1300"
         WindowStartupLocation="CenterScreen" 
@@ -41,7 +43,6 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!--Navig menu-->
             <Border CornerRadius="10,0,0,10"
                 Grid.Column="0"
                 >
@@ -54,7 +55,6 @@
 
                 <StackPanel>
 
-                    <!--Logo-->
                     <StackPanel Orientation="Horizontal"
                                 Height="100"
                                 Margin="15,25,0,40"                              
@@ -71,7 +71,6 @@
                     </StackPanel>
 
 
-                    <!--MenuButtons-->
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color1}"
                                  IsChecked="True"
@@ -87,7 +86,6 @@
             </Border>
 
 
-            <!--Main section-->
             <Border CornerRadius="0,10,10,0"
                 Grid.Column="1">
                 <Border.Background>
@@ -100,59 +98,28 @@
 
                 <Grid>
                     <Grid.RowDefinitions>
-                        <!--Control bar-->
                         <RowDefinition Height="25"/>
-                        <!--Header/Caption-->
                         <RowDefinition Height="35"/>
-                        <!--Content section / ChildViews-->
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
 
 
-                    <!--Control bar-->
                     <StackPanel x:Name="pnlControlBar"
                                 Grid.Row="0"
                                 Orientation="Horizontal"
                                 FlowDirection="RightToLeft"
                                 Background="Transparent"
                                 Margin="0,0,5,0" >
-                        <!--MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown"
-                                MouseEnter="pnlControlBar_MouseEnter"-->
-                                
-
-                        <!--<Button x:Name="btnClose"
-                                Style="{StaticResource controlButton}"
-                                Tag="{StaticResource color4}"
-                                Click="btnClose_Click">
-                            <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
-                        </Button>-->
-
-
-                        <!--<Button x:Name="btnMaximize"
-                                Style="{StaticResource controlButton}"
-                                Tag="{StaticResource color6}"
-                                Click="btnMaximize_Click">
-                            <fa:IconImage Icon="Square" Style="{StaticResource controlButtonIcon}"/>
-                        </Button>-->
-
-                        <!--<Button x:Name="btnMinimize"
-                                Style="{StaticResource controlButton}"
-                                Tag="{StaticResource color8}"
-                                Click="btnMinimize_Click">
-                            <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
-                        </Button>-->
-
+                        
                     </StackPanel>
 
-                    <!--Header/caption-->
                     <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <!--Caption-->
                         <StackPanel Grid.Column="0"
                                     Orientation="Horizontal"
                                     VerticalAlignment="Center">
@@ -171,55 +138,10 @@
                                        VerticalAlignment="Center"
                                        />
                         </StackPanel>
-
-
-                        <!--User options-->
-                        <!--<StackPanel Grid.Column="1"
-                                    Orientation="Horizontal"
-                                    FlowDirection="RightToLeft"                                  
-                                    VerticalAlignment="Center"
-                                    Margin="0,0,10,0">
-
-                            <Button Style="{StaticResource iconButton}"
-                                    Tag="{StaticResource color1}">
-                                <fa:IconImage Icon="AngleDown"
-                                              Width="12" Height="12"
-                                              Style="{StaticResource iconButtonIcon}" />
-                            </Button>
-
-                            <TextBlock Text="{Binding CurrentUserAccount.DisplayName}"
-                                       Foreground="{StaticResource titleColor3}"
-                                       FontFamily="Montserrat}"
-                                       FontSize="12"
-                                       VerticalAlignment="Center"/>
-
-                            <Ellipse Height="35" Width="35">
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/Images/female.png"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
-
-                            <Button Style="{StaticResource iconButton}"
-                                    Tag="{StaticResource color3}">
-                                <fa:IconImage Icon="Clock" Style="{StaticResource iconButtonIcon}" />
-                            </Button>
-
-                            <Button Style="{StaticResource iconButton}"
-                                    Tag="{StaticResource color4}">
-                                <fa:IconImage Icon="Envelope" Style="{StaticResource iconButtonIcon}" />
-                            </Button>
-
-                            <Button Style="{StaticResource iconButton}"
-                                    Tag="{StaticResource color5}">
-                                <fa:IconImage Icon="Bell" Style="{StaticResource iconButtonIcon}" />
-                            </Button>
-
-                        </StackPanel>-->
-
+                      
                     </Grid>
 
 
-                    <!--Content section / Child views-->
                     <ContentControl Content="{Binding CurrentChildView}"
                                     Grid.Row="2"
                                     Margin="25"

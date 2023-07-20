@@ -3,10 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CryptocurrenciesProject.Views"
+        xmlns:local="clr-namespace:CryptocurrenciesProject.Views" 
+        xmlns:local1="clr-namespace:CryptocurrenciesProject.ViewModels"
         mc:Ignorable="d"
         Title="" Height="630" Width="950" WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
+      
         >
 
     <Window.Resources>
@@ -57,7 +59,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Grid.Column="0" Text="Назва криптовалюти:" FontSize="18" FontWeight="Bold" Margin="10" VerticalAlignment="Center"/>
-                    <TextBox Grid.Column="1" Text="{Binding Name}" Grid.Row="0"  FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                    <TextBox Grid.Column="1" Text="{Binding SelectedCrypto.Name}" Grid.Row="0"  FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
 
                 </Grid>
 
@@ -70,7 +72,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Символ:" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
-                    <TextBox Text="{Binding Symbol}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                    <TextBox Text="{Binding SelectedCrypto.Symbol}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
                 </Grid>
 
                 <Grid Grid.Row="2">
@@ -80,7 +82,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Ранг:" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
-                    <TextBox Text="{Binding Rank}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                    <TextBox Text="{Binding SelectedCrypto.Rank}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
                 </Grid>
 
 
@@ -91,7 +93,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Ціна (USD):" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
-                    <TextBox Text="{Binding PriceUsd, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                    <TextBox Text="{Binding SelectedCrypto.PriceUsd, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
                 </Grid>
 
 
@@ -102,7 +104,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Поточна кількість одиниць&#x0a;криптовалюти в обігу:" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
-                    <TextBox Text="{Binding Supply}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                    <TextBox Text="{Binding SelectedCrypto.Supply}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
                 </Grid>
 
 
@@ -113,7 +115,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Максимальна кількість одиниць &#x0a;криптовалюти, яка може &#x0a;існувати в обігу" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
-                    <TextBox Text="{Binding MaxSupply}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                    <TextBox Text="{Binding SelectedCrypto.MaxSupply}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
 
                 </Grid>
 
@@ -126,7 +128,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Ринкова капіталізація (USD):" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
-                    <TextBox Text="{Binding MarketCapUsd, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                    <TextBox Text="{Binding SelectedCrypto.MarketCapUsd, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
                 </Grid>
 
 
@@ -138,7 +140,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Об'єм торгів криптовалютою &#x0a;за 24 год (USD):" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
-                    <TextBox Text="{Binding VolumeUsd24Hr, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                    <TextBox Text="{Binding SelectedCrypto.VolumeUsd24Hr, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
 
                 </Grid>
 
@@ -151,7 +153,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Відсоток зміни ціни&#x0a;криптовалюти за останні 24 год:" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
-                    <TextBox Text="{Binding ChangePercent24Hr, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                    <TextBox Text="{Binding SelectedCrypto.ChangePercent24Hr, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
 
                 </Grid>
 
@@ -163,7 +165,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Середньозважена ціна&#x0a;криптовалюти за останні 24 год:" FontSize="18" FontWeight="Bold" Margin="10"  VerticalAlignment="Center"/>
-                    <TextBox Text="{Binding Vwap24Hr, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
+                    <TextBox Text="{Binding SelectedCrypto.Vwap24Hr, StringFormat={}{0:C2}}"  Grid.Column="1" FontSize="18" Margin="10" VerticalAlignment="Center" IsReadOnly="True"/>
 
                 </Grid>
 

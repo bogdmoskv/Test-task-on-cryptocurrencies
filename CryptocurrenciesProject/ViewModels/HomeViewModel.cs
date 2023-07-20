@@ -57,15 +57,36 @@ namespace CryptocurrenciesProject.ViewModels
             }
         }
 
-        private void ShowInformation(object parameter)
+        private async void ShowInformation(object parameter)
         {
             if (parameter is CryptoCurrency selectedCrypto)
             {
-                // Используйте выбранную криптовалюту для получения информации или выполнения необходимых операций
-                // Пример:
-                MessageBox.Show($"Selected cryptocurrency: {selectedCrypto.Name}, Symbol: {selectedCrypto.Symbol}");
+                //MessageBox.Show($"Selected cryptocurrency: {selectedCrypto.Name}, Symbol: {selectedCrypto.Symbol}");
+
+                //CryptoCurrencyView cryptoCurrencyView = new CryptoCurrencyView();
+                //cryptoCurrencyView.ShowDialog();
+
+
+
+
+
+
+                //CryptoCurrencyViewModel cryptoCurrencyViewModel =  new CryptoCurrencyViewModel(selectedCrypto.Id);
+
+                //CryptoCurrencyView cryptoCurrencyView = new CryptoCurrencyView();
+                //cryptoCurrencyView.DataContext = cryptoCurrencyViewModel;
+                //cryptoCurrencyView.ShowDialog();
+
+
+
+                CryptoCurrencyViewModel cryptoCurrencyViewModel = new CryptoCurrencyViewModel();
+                cryptoCurrencyViewModel.SelectedCryptoId = selectedCrypto.Id;
+                CryptoApiService cryptoApiService = new CryptoApiService();
+                CryptoCurrency gotFromApiCrypto = await cryptoApiService.GetCryptoCurrencyById(selectedCrypto.Id);
+                cryptoCurrencyViewModel.SelectedCrypto = gotFromApiCrypto;
 
                 CryptoCurrencyView cryptoCurrencyView = new CryptoCurrencyView();
+                cryptoCurrencyView.DataContext = cryptoCurrencyViewModel;
                 cryptoCurrencyView.ShowDialog();
             }
         }

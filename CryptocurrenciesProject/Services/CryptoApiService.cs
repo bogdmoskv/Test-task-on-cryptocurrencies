@@ -1,4 +1,5 @@
 ﻿using CryptocurrenciesProject.Models;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -71,6 +72,60 @@ namespace CryptocurrenciesProject.Services
 
 
 
+        public async Task<CryptoCurrency> GetCryptoCurrencyById(string cryptoId)
+        {
+            try
+            {
+                string apiUrl = $"https://api.coincap.io/v2/assets/{cryptoId}";
+                HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    JObject json = JObject.Parse(responseBody);
+                    JToken data = json["data"];
+
+                    if (data != null)
+                    {
+                        CryptoCurrency cryptoCurrency = data.ToObject<CryptoCurrency>();
+                        return cryptoCurrency;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Обработка ошибок при обращении к API
+            }
+
+            return null;
+        }
+
+
+
+        public async Task<List<MarketInfo>> GetCryptoCurrencyMarkets(string cryptoId)
+        {
+            List<MarketInfo> markets = new List<MarketInfo>();
+
+            try
+            {
+                string apiUrl = $"https://api.coincap.io/v2/assets/{cryptoId}/markets";
+                HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    MarketResponse marketResponse = JsonConvert.DeserializeObject<MarketResponse>(responseBody);
+                    markets = marketResponse.Data;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Обработка ошибок при запросе API
+                //Console.WriteLine("Error: " + ex.Message);
+            }
+
+            return markets;
+        }
 
 
 

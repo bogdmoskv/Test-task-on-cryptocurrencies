@@ -3,10 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CryptocurrenciesProject.Views"
+             xmlns:local="clr-namespace:CryptocurrenciesProject.Views" 
+             xmlns:viewModels="clr-namespace:CryptocurrenciesProject.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
 
+    <UserControl.DataContext>
+        <viewModels:ConvertViewModel/>
+    </UserControl.DataContext>
+    
     <UserControl.Resources>
         <Style TargetType="Border" x:Key="PageStyle">
             <Setter Property="Background">
@@ -17,7 +22,6 @@
         </Style>
 
         <Style TargetType="Border" x:Key="ConvertBorderStyle">
-            <!--<Setter Property="Background" Value="White" />-->
             <Setter Property="BorderThickness" Value="0.5" />
             <Setter Property="BorderBrush" Value="Violet" />
             <Setter Property="Padding" Value="10" />
@@ -76,10 +80,12 @@
                                HorizontalAlignment="Center"
                                 />
 
-            <ComboBox ItemsSource="{Binding ConvertModels}"
-                                  SelectedItem="{Binding SelectedFromCoin}"
+                <!--SelectedItem="{Binding SelectedFromCoin}"-->
+                <ComboBox ItemsSource="{Binding CryptoCurrencies}"
+                                 TextSearch.TextPath="Name"
                                   Style="{DynamicResource ComboBoxFlatStyle}"
                                   IsTextSearchEnabled="True"
+                                  IsEditable="True"
                                   FontSize="20"
                                   Height="48"
                                   Margin="10, 0"
@@ -106,21 +112,22 @@
                                HorizontalAlignment="Center"
                                 />
 
-            <ComboBox ItemsSource="{Binding ConvertModels}"
-                                  SelectedItem="{Binding SelectedFromCoin}"
+                <ComboBox ItemsSource="{Binding CryptoCurrencies}"
+                                 TextSearch.TextPath="Name"
                                   Style="{DynamicResource ComboBoxFlatStyle}"
                                   IsTextSearchEnabled="True"
+                                  IsEditable="True"
                                   FontSize="20"
                                   Height="48"
                                   Margin="10, 0"
                                   Grid.Column="1">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Name}"/>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-        </Grid>
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </Grid>
 
 
 

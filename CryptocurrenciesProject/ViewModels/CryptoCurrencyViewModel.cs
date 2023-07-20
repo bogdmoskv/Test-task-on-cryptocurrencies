@@ -15,11 +15,13 @@ namespace CryptocurrenciesProject.ViewModels
     {
         private string selectedCryptoId;
         private CryptoCurrency selectedCrypto;
+        private CryptoApiService cryptoApiService;
         public ICommand RefreshCommand { get; }
 
         public CryptoCurrencyViewModel()
         {
             RefreshCommand = new RelayCommand(Refresh);
+            cryptoApiService = new CryptoApiService();
         }
 
         public string SelectedCryptoId
@@ -49,7 +51,6 @@ namespace CryptocurrenciesProject.ViewModels
 
         public async void Refresh(object parameter)
         {
-            CryptoApiService cryptoApiService = new CryptoApiService();
             SelectedCrypto = await cryptoApiService.GetCryptoCurrencyById(SelectedCrypto.Id);
             MessageBox.Show("Інформацію було оновлено!");
         }

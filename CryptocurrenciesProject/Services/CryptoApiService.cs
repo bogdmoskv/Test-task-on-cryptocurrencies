@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -64,7 +65,7 @@ namespace CryptocurrenciesProject.Services
             }
             catch
             {
-           
+                MessageBox.Show("При завантаженні списку криптовалют виникла помилка!");
             }
 
             return cryptoCurrencies;
@@ -92,9 +93,9 @@ namespace CryptocurrenciesProject.Services
                     }
                 }
             }
-            catch (Exception ex)
+            catch 
             {
-                // Обработка ошибок при обращении к API
+                MessageBox.Show("Виникла помилка! Перевірте інтернет-з'єднання!");
             }
 
             return null;
@@ -102,30 +103,30 @@ namespace CryptocurrenciesProject.Services
 
 
 
-        public async Task<List<MarketInfo>> GetCryptoCurrencyMarkets(string cryptoId)
-        {
-            List<MarketInfo> markets = new List<MarketInfo>();
+        //public async Task<List<MarketInfo>> GetCryptoCurrencyMarkets(string cryptoId)
+        //{
+        //    List<MarketInfo> markets = new List<MarketInfo>();
 
-            try
-            {
-                string apiUrl = $"https://api.coincap.io/v2/assets/{cryptoId}/markets";
-                HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
+        //    try
+        //    {
+        //        string apiUrl = $"https://api.coincap.io/v2/assets/{cryptoId}/markets";
+        //        HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
 
-                if (response.IsSuccessStatusCode)
-                {
-                    string responseBody = await response.Content.ReadAsStringAsync();
-                    MarketResponse marketResponse = JsonConvert.DeserializeObject<MarketResponse>(responseBody);
-                    markets = marketResponse.Data;
-                }
-            }
-            catch (Exception ex)
-            {
-                // Обработка ошибок при запросе API
-                //Console.WriteLine("Error: " + ex.Message);
-            }
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            string responseBody = await response.Content.ReadAsStringAsync();
+        //            MarketResponse marketResponse = JsonConvert.DeserializeObject<MarketResponse>(responseBody);
+        //            markets = marketResponse.Data;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Обработка ошибок при запросе API
+        //        //Console.WriteLine("Error: " + ex.Message);
+        //    }
 
-            return markets;
-        }
+        //    return markets;
+        //}
 
 
 

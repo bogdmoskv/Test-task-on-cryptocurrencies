@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия\\CryptocurrenciesProject\\CryptocurrenciesProject\\CryptocurrenciesProject.csproj": {}
+    "C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия — копия\\CryptocurrenciesProject\\CryptocurrenciesProject\\CryptocurrenciesProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия\\CryptocurrenciesProject\\CryptocurrenciesProject\\CryptocurrenciesProject.csproj": {
+    "C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия — копия\\CryptocurrenciesProject\\CryptocurrenciesProject\\CryptocurrenciesProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия\\CryptocurrenciesProject\\CryptocurrenciesProject\\CryptocurrenciesProject.csproj",
+        "projectUniqueName": "C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия — копия\\CryptocurrenciesProject\\CryptocurrenciesProject\\CryptocurrenciesProject.csproj",
         "projectName": "CryptocurrenciesProject",
-        "projectPath": "C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия\\CryptocurrenciesProject\\CryptocurrenciesProject\\CryptocurrenciesProject.csproj",
+        "projectPath": "C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия — копия\\CryptocurrenciesProject\\CryptocurrenciesProject\\CryptocurrenciesProject.csproj",
         "packagesPath": "C:\\Users\\Bogdan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия\\CryptocurrenciesProject\\CryptocurrenciesProject\\obj\\",
+        "outputPath": "C:\\Users\\Bogdan\\Desktop\\Test task on cryptocurrencies_Moskvichev Bogdan — копия — копия — копия\\CryptocurrenciesProject\\CryptocurrenciesProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bogdan\\AppData\\Roaming\\NuGet\\NuGet.Config",

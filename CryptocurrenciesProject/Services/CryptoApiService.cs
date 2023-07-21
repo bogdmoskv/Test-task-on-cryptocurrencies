@@ -101,35 +101,6 @@ namespace CryptocurrenciesProject.Services
             return null;
         }
 
-
-
-        //public async Task<List<MarketInfo>> GetCryptoCurrencyMarkets(string cryptoId)
-        //{
-        //    List<MarketInfo> markets = new List<MarketInfo>();
-
-        //    try
-        //    {
-        //        string apiUrl = $"https://api.coincap.io/v2/assets/{cryptoId}/markets";
-        //        HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
-
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            string responseBody = await response.Content.ReadAsStringAsync();
-        //            MarketResponse marketResponse = JsonConvert.DeserializeObject<MarketResponse>(responseBody);
-        //            markets = marketResponse.Data;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Обработка ошибок при запросе API
-        //        //Console.WriteLine("Error: " + ex.Message);
-        //    }
-
-        //    return markets;
-        //}
-
-
-
     }
 
 

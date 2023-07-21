@@ -88,28 +88,22 @@ namespace CryptocurrenciesProject.ViewModels
             }
         }
 
-
         private void CalculateResult()
         {
             if (SelectedFromCoin != null && SelectedToCoin != null && Count > 0)
             {
                 if (double.TryParse(Count.ToString(), out double amount))
                 {
-                    // Отримуємо курс першої криптовалюти до долара
                     decimal? fromCurrencyToUSD = SelectedFromCoin.PriceUsd;
 
-                    // Отримуємо курс другої криптовалюти до долара
                     decimal? toCurrencyToUSD = SelectedToCoin.PriceUsd;
 
                     if (fromCurrencyToUSD.HasValue && toCurrencyToUSD.HasValue)
                     {
-                        // Конвертуємо суму в першій криптовалюті в долари
                         decimal amountInUSD = (decimal)amount * (decimal)fromCurrencyToUSD.Value;
-
-                        // Конвертуємо суму в доларах в еквівалентну суму в другій криптовалюті
+                        
                         decimal result = amountInUSD / (decimal)toCurrencyToUSD.Value;
 
-                        // Оновлюємо значення Result
                         Result = result;
                     }
                     else
